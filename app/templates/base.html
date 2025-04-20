@@ -21,10 +21,48 @@
         .wood-texture {
             background-color: var(--color-primary);
             background-image: 
-                url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"),
-                linear-gradient(45deg, var(--color-primary), var(--color-secondary));
-            background-blend-mode: multiply;
+                linear-gradient(90deg, 
+                    rgba(139, 69, 19, 0.9) 0%,
+                    rgba(160, 82, 45, 0.9) 50%,
+                    rgba(139, 69, 19, 0.9) 100%),
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+                repeating-linear-gradient(0deg,
+                    transparent,
+                    transparent 50px,
+                    rgba(255, 255, 255, 0.02) 50px,
+                    rgba(255, 255, 255, 0.02) 51px),
+                repeating-linear-gradient(90deg,
+                    transparent,
+                    transparent 50px,
+                    rgba(255, 255, 255, 0.02) 50px,
+                    rgba(255, 255, 255, 0.02) 51px);
+            background-blend-mode: overlay, multiply, overlay, normal;
+            position: relative;
+            overflow: hidden;
             color: white;
+        }
+
+        /* 和風の装飾パターン */
+        .wood-texture::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20h40M20 0v40' stroke='rgba(255,255,255,0.05)' fill='none'/%3E%3C/svg%3E");
+            background-size: 40px 40px;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        /* ヘッダーとフッターで異なる見た目に */
+        header.wood-texture {
+            border-bottom: 1px solid rgba(255, 165, 0, 0.2);
+        }
+
+        footer.wood-texture {
+            border-top: 1px solid rgba(255, 165, 0, 0.2);
         }
 
         /* アニメーション用スタイル */
