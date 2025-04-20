@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block title %}メニュー｜大勝軒しのや{% endblock %}
+
+{% block content %}
+<!-- メニューヘッダー -->
+<section class="wood-texture rounded-lg shadow-xl mb-12 p-8 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">メニュー</h1>
+    <p class="text-xl md:text-2xl">伝統の味と新しい発見</p>
+</section>
+
+<!-- つけ麺セクション -->
+<section class="mb-16">
+    <h2 class="text-3xl font-bold mb-8 text-orange-800 border-b-2 border-orange-800 pb-2">つけ麺</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+            <div class="h-48 bg-gray-200">
+                <!-- 画像を追加予定 -->
+            </div>
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold text-orange-800">特製つけ麺</h3>
+                    <span class="text-lg font-bold">¥1,180</span>
+                </div>
+                <p class="text-gray-700 mb-4">特製チャーシュー、メンマ、のり、味玉子、ネギ</p>
+                <p class="text-sm text-gray-600">※麺の量：並(200g)・大(300g)・特大(400g)</p>
+            </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+            <div class="h-48 bg-gray-200">
+                <!-- 画像を追加予定 -->
+            </div>
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold text-orange-800">濃厚魚介つけ麺</h3>
+                    <span class="text-lg font-bold">¥1,280</span>
+                </div>
+                <p class="text-gray-700 mb-4">煮干しと鰹節の旨味たっぷりのスープ、チャーシュー、メンマ、のり</p>
+                <p class="text-sm text-gray-600">※麺の量：並(200g)・大(300g)・特大(400g)</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- トッピングセクション -->
+<section class="mb-16">
+    <h2 class="text-3xl font-bold mb-8 text-orange-800 border-b-2 border-orange-800 pb-2">トッピング</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300">
+            <div class="flex justify-between items-center">
+                <span class="font-medium text-gray-800">特製チャーシュー</span>
+                <span class="text-orange-800">¥300</span>
+            </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300">
+            <div class="flex justify-between items-center">
+                <span class="font-medium text-gray-800">味玉子</span>
+                <span class="text-orange-800">¥120</span>
+            </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300">
+            <div class="flex justify-between items-center">
+                <span class="font-medium text-gray-800">メンマ</span>
+                <span class="text-orange-800">¥150</span>
+            </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300">
+            <div class="flex justify-between items-center">
+                <span class="font-medium text-gray-800">海苔（3枚）</span>
+                <span class="text-orange-800">¥100</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- サイドメニューセクション -->
+<section class="mb-16">
+    <h2 class="text-3xl font-bold mb-8 text-orange-800 border-b-2 border-orange-800 pb-2">サイドメニュー</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+            <div class="flex justify-between items-center mb-2">
+                <h3 class="text-lg font-bold text-gray-800">チャーシュー丼</h3>
+                <span class="text-orange-800 font-bold">¥450</span>
+            </div>
+            <p class="text-sm text-gray-600">特製チャーシューをたっぷりと</p>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+            <div class="flex justify-between items-center mb-2">
+                <h3 class="text-lg font-bold text-gray-800">ライス</h3>
+                <span class="text-orange-800 font-bold">¥200</span>
+            </div>
+            <p class="text-sm text-gray-600">国産米を使用</p>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+            <div class="flex justify-between items-center mb-2">
+                <h3 class="text-lg font-bold text-gray-800">餃子（6個）</h3>
+                <span class="text-orange-800 font-bold">¥350</span>
+            </div>
+            <p class="text-sm text-gray-600">手作り餃子</p>
+        </div>
+    </div>
+</section>
+
+<!-- 注意事項 -->
+<section class="bg-orange-50 rounded-lg p-6">
+    <h2 class="text-xl font-bold mb-4 text-orange-800">ご注文時の注意事項</h2>
+    <ul class="list-disc list-inside space-y-2 text-gray-700">
+        <li>価格は全て税込です</li>
+        <li>麺の量は無料で変更できます（並・大・特大）</li>
+        <li>スープの濃さ・油の量は調整できます</li>
+        <li>アレルギー対応についてはスタッフにお申し付けください</li>
+    </ul>
+</section>
+{% endblock %}

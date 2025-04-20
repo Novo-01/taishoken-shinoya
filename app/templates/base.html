@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}大勝軒しのや{% endblock %}</title>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #8B4513;
+            --color-secondary: #A0522D;
+            --color-accent: #D2691E;
+            --color-background: #FFF8DC;
+            --color-text: #2D2D2D;
+        }
+        
+        .wood-texture {
+            background-color: var(--color-primary);
+            background-image: 
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"),
+                linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+            background-blend-mode: multiply;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-orange-50 min-h-screen flex flex-col">
+    <header class="wood-texture shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <h1 class="text-3xl font-bold mb-4 md:mb-0">
+                    <a href="/" class="hover:text-orange-200 transition duration-300">大勝軒しのや</a>
+                </h1>
+                <nav class="space-x-6">
+                    <a href="/" class="hover:text-orange-200 transition duration-300">トップ</a>
+                    <a href="/menu" class="hover:text-orange-200 transition duration-300">メニュー</a>
+                    <a href="/info" class="hover:text-orange-200 transition duration-300">店舗情報</a>
+                    <a href="/story" class="hover:text-orange-200 transition duration-300">店主のこだわり</a>
+                    <a href="/news" class="hover:text-orange-200 transition duration-300">お知らせ</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 py-8">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="wood-texture mt-auto">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm">&copy; 2025 大勝軒しのや</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-orange-200 transition duration-300">プライバシーポリシー</a>
+                    <a href="#" class="hover:text-orange-200 transition duration-300">お問い合わせ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

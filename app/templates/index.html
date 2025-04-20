@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}トップページ｜大勝軒しのや{% endblock %}
+
+{% block content %}
+<!-- ヒーローセクション -->
+<section class="wood-texture rounded-lg shadow-xl mb-12 p-8 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">伝統の味を守り続けて</h1>
+    <p class="text-xl md:text-2xl mb-8">杉戸町で愛され続ける本格つけ麺の名店</p>
+    <a href="/menu" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 inline-block">
+        メニューを見る
+    </a>
+</section>
+
+<!-- 特徴セクション -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+        <h3 class="text-xl font-bold mb-4 text-orange-800">こだわりの麺</h3>
+        <p class="text-gray-700">自家製麺を毎日手作りで仕込み、コシのある食感と小麦の香りを大切にしています。</p>
+    </div>
+    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+        <h3 class="text-xl font-bold mb-4 text-orange-800">濃厚スープ</h3>
+        <p class="text-gray-700">豚骨と鶏ガラを12時間以上煮込んで作る、深い旨味のスープが自慢です。</p>
+    </div>
+    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+        <h3 class="text-xl font-bold mb-4 text-orange-800">トッピング</h3>
+        <p class="text-gray-700">チャーシューは国産豚肉を使用し、じっくりと煮込んで柔らかく仕上げています。</p>
+    </div>
+</section>
+
+<!-- お知らせセクション -->
+<section class="bg-white rounded-lg shadow-md p-8 mb-12">
+    <h2 class="text-2xl font-bold mb-6 text-orange-800 border-b-2 border-orange-800 pb-2">お知らせ</h2>
+    <div class="space-y-4">
+        <div class="flex items-start">
+            <span class="text-gray-500 w-24 flex-shrink-0">2024.03.20</span>
+            <p class="text-gray-700">4月の営業カレンダーを更新しました</p>
+        </div>
+        <div class="flex items-start">
+            <span class="text-gray-500 w-24 flex-shrink-0">2024.03.15</span>
+            <p class="text-gray-700">春の新メニュー「桜海老の塩つけ麺」が登場！</p>
+        </div>
+        <div class="flex items-start">
+            <span class="text-gray-500 w-24 flex-shrink-0">2024.03.01</span>
+            <p class="text-gray-700">駐車場を拡張しました（大型車両2台分追加）</p>
+        </div>
+    </div>
+    <div class="text-right mt-4">
+        <a href="/news" class="text-orange-600 hover:text-orange-700 font-medium inline-flex items-center">
+            もっと見る
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+        </a>
+    </div>
+</section>
+
+<!-- 営業時間・アクセス -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="bg-white rounded-lg shadow-md p-6">
+        <h2 class="text-2xl font-bold mb-4 text-orange-800">営業時間</h2>
+        <div class="space-y-2 text-gray-700">
+            <p>平日: 11:00 - 15:00 / 17:00 - 21:00</p>
+            <p>土日祝: 11:00 - 21:00</p>
+            <p class="text-red-600">定休日: 水曜日</p>
+        </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-md p-6">
+        <h2 class="text-2xl font-bold mb-4 text-orange-800">アクセス</h2>
+        <div class="text-gray-700">
+            <p>〒345-0036</p>
+            <p>埼玉県北葛飾郡杉戸町杉戸3-3-3</p>
+            <p class="mt-2">東武動物公園駅から徒歩15分</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
