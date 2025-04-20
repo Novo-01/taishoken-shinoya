@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}大勝軒しのや{% endblock %}</title>
-    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/input.css') }}">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         :root {
             --color-primary: #8B4513;
@@ -22,41 +24,244 @@
             background-blend-mode: multiply;
             color: white;
         }
+
+        /* アニメーション用スタイル */
+        .hover-float {
+            transition: transform 0.3s ease;
+        }
+        .hover-float:hover {
+            transform: translateY(-5px);
+        }
+
+        .hover-zoom {
+            transition: transform 0.3s ease;
+        }
+        .hover-zoom:hover {
+            transform: scale(1.02);
+        }
+
+        /* ナビゲーションリンクのアクティブ状態 */
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #FFA500;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* スプラッシュ画面 */
+        .splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: fadeOut 3s ease-out forwards;
+        }
+        .splash-logo {
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            color: #333;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.5s forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            70% { opacity: 1; }
+            100% { opacity: 0; visibility: hidden; }
+        }
+
+        /* ページ遷移アニメーション */
+        .page-content {
+            opacity: 0;
+            transform: translateX(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .page-content.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .page-content.no-splash {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+        .page-content.no-splash.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* カスタム背景 */
+        body {
+            background-color: var(--color-background);
+            background-image: 
+                linear-gradient(rgba(255, 248, 220, 0.9), rgba(255, 248, 220, 0.9)),
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            background-blend-mode: overlay;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 69, 19, 0.1);
+            box-shadow: 0 4px 6px rgba(139, 69, 19, 0.1);
+        }
+
+        .nav-item {
+            position: relative;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover {
+            background: rgba(139, 69, 19, 0.1);
+            border-radius: 0.5rem;
+        }
+
+        /* SNSアイコンのスタイル */
+        .social-icons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .social-icon {
+            color: #FFA500;
+            transition: all 0.3s ease;
+            font-size: 1.5rem;
+        }
+
+        .social-icon:hover {
+            color: white;
+            transform: translateY(-3px);
+        }
     </style>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body class="bg-orange-50 min-h-screen flex flex-col">
-    <header class="wood-texture shadow-lg">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col items-center py-4">
-                <h1 class="text-2xl md:text-3xl font-bold mb-2 md:mb-3">
-                    <a href="/" class="hover:text-orange-200 transition duration-300">大勝軒しのや</a>
-                </h1>
-                <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm md:text-base">
-                    <a href="/" class="hover:text-orange-200 transition duration-300">トップ</a>
-                    <a href="/menu" class="hover:text-orange-200 transition duration-300">メニュー</a>
-                    <a href="/info" class="hover:text-orange-200 transition duration-300">店舗情報</a>
-                    <a href="/story" class="hover:text-orange-200 transition duration-300">店主のこだわり</a>
-                    <a href="/news" class="hover:text-orange-200 transition duration-300">お知らせ</a>
-                    <a href="/parking" class="hover:text-orange-200 transition duration-300">駐車場案内</a>
-                </nav>
-            </div>
-        </div>
-    </header>
+<body>
+    <!-- スプラッシュ画面（トップページのみ表示） -->
+    {% if request.path == '/' %}
+    <div class="splash-screen">
+        <div class="splash-logo">TAISHOKEN-SHINOYA</div>
+    </div>
+    {% endif %}
 
-    <main class="flex-grow container mx-auto px-4 py-8">
-        {% block content %}{% endblock %}
-    </main>
-
-    <footer class="wood-texture mt-auto">
-        <div class="container mx-auto px-4 py-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <p class="text-sm">&copy; 2025 大勝軒しのや</p>
-                <div class="flex space-x-4 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-orange-200 transition duration-300">プライバシーポリシー</a>
-                    <a href="#" class="hover:text-orange-200 transition duration-300">お問い合わせ</a>
+    <!-- メインコンテンツ -->
+    <div class="page-content {% if request.path != '/' %}no-splash{% endif %}">
+        <header class="wood-texture shadow-lg">
+            <div class="container mx-auto px-4 py-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <h1 class="text-3xl font-bold mb-4 md:mb-0 hover-float">
+                        <a href="/" class="text-white hover:text-orange-200 transition duration-300">大勝軒しのや</a>
+                    </h1>
+                    <nav class="flex flex-wrap gap-2 md:gap-4">
+                        <a href="/" class="nav-item text-white hover:text-orange-200 transition duration-300">トップ</a>
+                        <a href="/menu" class="nav-item text-white hover:text-orange-200 transition duration-300">メニュー</a>
+                        <a href="/story" class="nav-item text-white hover:text-orange-200 transition duration-300">こだわり</a>
+                        <a href="/parking" class="nav-item text-white hover:text-orange-200 transition duration-300">駐車場案内</a>
+                    </nav>
                 </div>
             </div>
-        </div>
-    </footer>
+        </header>
+
+        <main class="container mx-auto px-4 py-8">
+            <div class="main-content opacity-0 transition-opacity duration-300 ease-out">
+                {% block content %}{% endblock %}
+            </div>
+        </main>
+
+        <footer class="wood-texture mt-auto">
+            <div class="container mx-auto px-4 py-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">大勝軒しのや</h3>
+                        <p>〒345-0021</p>
+                        <p>埼玉県北葛飾郡杉戸町北蓮沼497</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">営業時間</h3>
+                        <p>7:00～15:00, 17:00～20:00</p>
+                        <p>火曜日定休</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">アクセス</h3>
+                        <p>東武動物公園駅から徒歩15分</p>
+                        <a href="/parking" class="text-orange-200 hover:text-orange-100 transition duration-300">駐車場案内はこちら</a>
+                    </div>
+                </div>
+                <!-- SNSアイコン -->
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/taishokenshino" target="_blank" rel="noopener noreferrer" class="social-icon">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+                <div class="mt-8 text-center text-orange-200">
+                    <p>&copy; 2024 大勝軒しのや All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // AOSの初期化
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // ページ遷移アニメーション
+        document.addEventListener('DOMContentLoaded', function() {
+            const pageContent = document.querySelector('.page-content');
+            if (pageContent) {
+                // スプラッシュ画面がある場合は少し遅延
+                if (!pageContent.classList.contains('no-splash')) {
+                    setTimeout(() => {
+                        pageContent.classList.add('visible');
+                    }, 100);
+                } else {
+                    // スプラッシュ画面がない場合は即座にアニメーション開始
+                    requestAnimationFrame(() => {
+                        pageContent.classList.add('visible');
+                    });
+                }
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainContent = document.querySelector('.main-content');
+            // 軽いフェードインアニメーション
+            setTimeout(() => {
+                mainContent.classList.remove('opacity-0');
+            }, 100);
+        });
+    </script>
 </body>
 </html>
