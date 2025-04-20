@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block title %}駐車場案内｜大勝軒しのや{% endblock %}
+
+{% block content %}
+<!-- ヘッダーセクション -->
+<section class="wood-texture rounded-lg shadow-xl mb-12 p-8 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">駐車場案内</h1>
+    <p class="text-xl md:text-2xl">大型車両も安心してご利用いただけます</p>
+</section>
+
+<!-- 駐車場情報 -->
+<section class="mb-12">
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-8">
+            <div>
+                <h2 class="text-2xl font-bold text-orange-800 mb-6">駐車場の特徴</h2>
+                <ul class="space-y-4 text-gray-700">
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-orange-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        <span>普通車8台、大型車2台収容可能</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-orange-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        <span>全て無料でご利用いただけます</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-orange-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        <span>大型車専用スペースあり</span>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <img src="{{ url_for('static', filename='images/parking1.jpg') }}" alt="駐車場の様子" class="rounded-lg shadow-md">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 大型車両向け情報 -->
+<section class="mb-12">
+    <div class="bg-orange-50 rounded-lg shadow-lg p-8">
+        <h2 class="text-2xl font-bold text-orange-800 mb-6">大型車両をご利用の方へ</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="space-y-4 text-gray-700">
+                <p>トラック運転手の方々に快適にご利用いただけるよう、以下の設備を整えています：</p>
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                    <li>十分な車高・全長に対応</li>
+                    <li>簡単な前進入庫が可能</li>
+                    <li>事前予約不要</li>
+                </ul>
+            </div>
+            <div>
+                <img src="{{ url_for('static', filename='images/parking2.jpg') }}" alt="大型車両用駐車スペース" class="rounded-lg shadow-md">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 利用上の注意 -->
+<section class="mb-12">
+    <div class="bg-white rounded-lg shadow-lg p-8">
+        <h2 class="text-2xl font-bold text-orange-800 mb-6">ご利用上の注意</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="space-y-4 text-gray-700">
+                <h3 class="text-xl font-semibold text-orange-700">営業時間内でのご利用</h3>
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                    <li>営業時間内のみのご利用をお願いします</li>
+                    <li>長時間の駐車はご遠慮ください</li>
+                    <li>他のお客様のためにも、お食事中のみの駐車にご協力ください</li>
+                </ul>
+            </div>
+            <div class="space-y-4 text-gray-700">
+                <h3 class="text-xl font-semibold text-orange-700">大型車両の方へ</h3>
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                    <li>専用スペースをご利用ください</li>
+                    <li>バックでの入庫にご協力ください</li>
+                    <li>不明点はスタッフにお声がけください</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- アクセス情報 -->
+<section>
+    <div class="bg-white rounded-lg shadow-lg p-8">
+        <h2 class="text-2xl font-bold text-orange-800 mb-6">アクセス</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="space-y-4 text-gray-700">
+                <p class="font-semibold">住所</p>
+                <p>〒345-0036<br>埼玉県北葛飾郡杉戸町杉戸3-3-3</p>
+                <p class="mt-4 font-semibold">最寄り駅からのアクセス</p>
+                <p>東武動物公園駅から徒歩15分</p>
+            </div>
+            <div class="space-y-4 text-gray-700">
+                <p class="font-semibold">お車でのアクセス</p>
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                    <li>東北自動車道 久喜ICより10分</li>
+                    <li>国道4号線沿い</li>
+                    <li>カーナビの場合は住所を入力してください</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 

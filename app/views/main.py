@@ -25,3 +25,7 @@ def news():
 @main_bp.route('/sns')
 def sns():
     return render_template('sns.html')
+
+@main_bp.route('/parking')
+def parking():
+    return render_template('parking.html')
