@@ -4,12 +4,18 @@
 
 {% block content %}
 <!-- ヒーローセクション -->
-<section class="wood-texture rounded-lg shadow-xl mb-12 p-8 text-center">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4">伝統の味を守り続けて</h1>
-    <p class="text-xl md:text-2xl mb-8">杉戸町で愛され続ける本格つけ麺の名店</p>
-    <a href="/menu" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 inline-block">
-        メニューを見る
-    </a>
+<section class="relative mb-12">
+    <div class="h-[500px] overflow-hidden">
+        <img src="{{ url_for('static', filename='images/tsukemen.jpg') }}" alt="特製つけ麺" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-60"></div>
+    </div>
+    <div class="absolute inset-0 flex flex-col justify-center items-center text-white">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-shadow-lg">伝統の味を守り続けて</h1>
+        <p class="text-xl md:text-2xl mb-8 text-shadow-lg">杉戸町で愛され続ける本格つけ麺の名店</p>
+        <a href="/menu" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 inline-block">
+            メニューを見る
+        </a>
+    </div>
 </section>
 
 <!-- 特徴セクション -->
