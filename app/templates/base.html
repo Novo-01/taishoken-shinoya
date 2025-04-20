@@ -7,6 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/input.css') }}">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --color-primary: #8B4513;
@@ -155,6 +157,50 @@
             color: white;
             transform: translateY(-3px);
         }
+
+        /* ロゴスタイル */
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-main {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            position: relative;
+            padding: 0 1rem;
+        }
+
+        .logo-main::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #FFA500, transparent);
+        }
+
+        .logo-sub {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.2em;
+            color: #FFA500;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .logo-main {
+                font-size: 2rem;
+            }
+            .logo-sub {
+                font-size: 0.8rem;
+            }
+        }
     </style>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -172,9 +218,12 @@
         <header class="wood-texture shadow-lg">
             <div class="container mx-auto px-4 py-6">
                 <div class="flex flex-col md:flex-row justify-between items-center">
-                    <h1 class="text-3xl font-bold mb-4 md:mb-0 hover-float">
-                        <a href="/" class="text-white hover:text-orange-200 transition duration-300">大勝軒しのや</a>
-                    </h1>
+                    <div class="logo-container mb-4 md:mb-0 hover-float">
+                        <a href="/" class="text-decoration-none">
+                            <h1 class="logo-main text-white">大勝軒しのや</h1>
+                            <p class="logo-sub">TAISHOKEN SHINOYA</p>
+                        </a>
+                    </div>
                     <nav class="flex flex-wrap gap-2 md:gap-4">
                         <a href="/" class="nav-item text-white hover:text-orange-200 transition duration-300">トップ</a>
                         <a href="/menu" class="nav-item text-white hover:text-orange-200 transition duration-300">メニュー</a>
