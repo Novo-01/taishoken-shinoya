@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}お知らせ｜大勝軒しのや{% endblock %}
+
+{% block content %}
+<!-- ヘッダーセクション -->
+<section class="wood-texture rounded-lg shadow-xl mb-12 p-8 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">お知らせ</h1>
+    <p class="text-xl md:text-2xl">最新情報をお届けします</p>
+</section>
+
+<!-- お知らせ一覧 -->
+<section class="mb-16">
+    <div class="bg-white rounded-lg shadow-lg p-8">
+        <div class="space-y-8">
+            <!-- 最新のお知らせ -->
+            <article class="border-b border-gray-200 pb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">NEW</span>
+                    <time class="ml-4 text-gray-500">2024.03.20</time>
+                </div>
+                <h2 class="text-2xl font-bold text-orange-800 mb-4">4月の営業カレンダーを更新しました</h2>
+                <div class="prose text-gray-700">
+                    <p>4月の営業日程が決まりましたので、カレンダーを更新いたしました。</p>
+                    <p>大型連休中も通常営業いたしますので、ぜひご来店ください。</p>
+                    <ul class="list-disc list-inside mt-4">
+                        <li>4月29日（月・祝）: 通常営業</li>
+                        <li>4月30日（火）: 通常営業</li>
+                        <li>5月1日（水）: 定休日</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- 春の新メニュー -->
+            <article class="border-b border-gray-200 pb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">新メニュー</span>
+                    <time class="ml-4 text-gray-500">2024.03.15</time>
+                </div>
+                <h2 class="text-2xl font-bold text-orange-800 mb-4">春の新メニュー「桜海老の塩つけ麺」が登場！</h2>
+                <div class="prose text-gray-700">
+                    <p>春の限定メニューとして、「桜海老の塩つけ麺」の提供を開始いたしました。</p>
+                    <p>駿河湾産の桜海老を使用し、塩ベースのあっさりとしたスープに仕上げています。</p>
+                    <ul class="list-disc list-inside mt-4">
+                        <li>価格: 1,380円（税込）</li>
+                        <li>提供期間: 2024年3月15日〜4月30日</li>
+                        <li>※数量限定となります</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- 駐車場拡張 -->
+            <article class="border-b border-gray-200 pb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">お知らせ</span>
+                    <time class="ml-4 text-gray-500">2024.03.01</time>
+                </div>
+                <h2 class="text-2xl font-bold text-orange-800 mb-4">駐車場を拡張しました</h2>
+                <div class="prose text-gray-700">
+                    <p>お客様からのご要望にお応えし、駐車場を拡張いたしました。</p>
+                    <p>大型車両用のスペースを2台分増設し、より多くのお客様にご利用いただけるようになりました。</p>
+                    <ul class="list-disc list-inside mt-4">
+                        <li>普通車: 8台</li>
+                        <li>大型車両: 2台（新設）</li>
+                        <li><a href="/parking" class="text-orange-600 hover:text-orange-700">駐車場の詳細はこちら</a></li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ページネーション -->
+<nav class="flex justify-center">
+    <ul class="flex space-x-2">
+        <li>
+            <span class="bg-orange-600 text-white px-4 py-2 rounded-lg">1</span>
+        </li>
+        <li>
+            <a href="#" class="text-orange-600 hover:bg-orange-100 px-4 py-2 rounded-lg">2</a>
+        </li>
+        <li>
+            <a href="#" class="text-orange-600 hover:bg-orange-100 px-4 py-2 rounded-lg">3</a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}

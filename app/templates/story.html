@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %}店主のこだわり｜大勝軒しのや{% endblock %}
+
+{% block content %}
+<!-- ヘッダーセクション -->
+<section class="wood-texture rounded-lg shadow-xl mb-12 p-8 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">店主のこだわり</h1>
+    <p class="text-xl md:text-2xl">伝統を守りながら、新しい味への挑戦</p>
+</section>
+
+<!-- ストーリーセクション -->
+<section class="mb-16">
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-8">
+            <div class="space-y-6">
+                <h2 class="text-3xl font-bold text-orange-800">つけ麺への情熱</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    20年以上にわたり、つけ麺一筋で研鑽を重ねてきました。
+                    大勝軒の伝統を受け継ぎながらも、独自の進化を遂げた当店のつけ麺は、
+                    多くのお客様に愛され続けています。
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                    毎日早朝から仕込む自家製麺、12時間以上かけて丁寧に取るスープ、
+                    厳選した国産豚肉を使用したチャーシュー。
+                    すべての工程にこだわり抜いた一杯を提供しています。
+                </p>
+            </div>
+            <div class="relative h-64 md:h-auto">
+                <img src="{{ url_for('static', filename='images/tsukemen.jpg') }}" alt="つけ麺" class="absolute inset-0 w-full h-full object-cover rounded-lg">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- こだわりの詳細 -->
+<section class="mb-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-bold text-orange-800 mb-4">自家製麺へのこだわり</h3>
+            <p class="text-gray-700">
+                毎日店内で手作りする自家製麺。
+                小麦の風味とコシの強さ、スープとの相性を追求し、
+                理想の麺を目指して日々研究を重ねています。
+            </p>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-bold text-orange-800 mb-4">スープへのこだわり</h3>
+            <p class="text-gray-700">
+                豚骨と鶏ガラを12時間以上煮込み、
+                じっくりと旨味を引き出したスープ。
+                濃厚でありながら、最後まで飲み干せる味わいを実現しました。
+            </p>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-bold text-orange-800 mb-4">食材へのこだわり</h3>
+            <p class="text-gray-700">
+                チャーシューには国産豚肉を使用し、
+                特製の調味液でじっくり煮込んでいます。
+                その他の食材も、品質にこだわって厳選しています。
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- メッセージ -->
+<section class="bg-orange-50 rounded-lg shadow-lg p-8">
+    <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl font-bold text-orange-800 mb-6">お客様へのメッセージ</h2>
+        <p class="text-gray-700 leading-relaxed mb-4">
+            「おいしい」の一言が、私たちの原動力です。
+            伝統の味を守りながらも、常に新しい挑戦を続け、
+            より多くのお客様に喜んでいただける一杯を目指しています。
+        </p>
+        <p class="text-gray-700 leading-relaxed">
+            これからも、心を込めたつけ麺を提供し続けていきます。
+            ご来店を心よりお待ちしております。
+        </p>
+        <p class="text-orange-800 font-bold mt-4">店主</p>
+    </div>
+</section>
+{% endblock %}

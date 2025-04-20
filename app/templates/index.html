@@ -65,18 +65,71 @@
 <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
     <div class="bg-white rounded-lg shadow-md p-6">
         <h2 class="text-2xl font-bold mb-4 text-orange-800">営業時間</h2>
-        <div class="space-y-2 text-gray-700">
-            <p>平日: 11:00 - 15:00 / 17:00 - 21:00</p>
-            <p>土日祝: 11:00 - 21:00</p>
-            <p class="text-red-600">定休日: 水曜日</p>
+        <div class="space-y-2">
+            <div class="flex justify-between items-center border-b border-gray-100 py-2">
+                <span class="font-medium">日曜日</span>
+                <span class="text-gray-600">7:00～15:00, 17:00～20:00</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-100 py-2">
+                <span class="font-medium">月曜日</span>
+                <span class="text-gray-600">7:00～15:00, 17:00～20:00</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-100 py-2">
+                <span class="font-medium">火曜日</span>
+                <span class="text-red-600 font-medium">定休日</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-100 py-2">
+                <span class="font-medium">水曜日</span>
+                <span class="text-gray-600">7:00～15:00, 17:00～20:00</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-100 py-2">
+                <span class="font-medium">木曜日</span>
+                <span class="text-gray-600">7:00～15:00, 17:00～20:00</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-100 py-2">
+                <span class="font-medium">金曜日</span>
+                <span class="text-gray-600">7:00～15:00, 17:00～20:00</span>
+            </div>
+            <div class="flex justify-between items-center py-2">
+                <span class="font-medium">土曜日</span>
+                <span class="text-gray-600">7:00～15:00, 17:00～20:00</span>
+            </div>
+        </div>
+        <div class="mt-4 text-sm text-gray-600">
+            <p>※ラストオーダーは閉店30分前</p>
+            <p>※祝日は通常営業（火曜が祝日の場合は営業）</p>
         </div>
     </div>
     <div class="bg-white rounded-lg shadow-md p-6">
         <h2 class="text-2xl font-bold mb-4 text-orange-800">アクセス</h2>
-        <div class="text-gray-700">
-            <p>〒345-0036</p>
-            <p>埼玉県北葛飾郡杉戸町杉戸3-3-3</p>
+        <div class="text-gray-700 mb-4">
+            <p>〒345-0021</p>
+            <p>埼玉県北葛飾郡杉戸町北蓮沼497</p>
             <p class="mt-2">東武動物公園駅から徒歩15分</p>
+        </div>
+        <div class="w-full h-64 rounded-lg overflow-hidden">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3225.0647959494897!2d139.7253265!3d36.0625275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018b96a98b5290f%3A0x88cd6e6bb8f2074!2z44CSMzQ1LTAwMjEg5Z-8546J55yM5YyX6JGJ6aOv6YOh5p2J5oi45biC5YyX6JOj5rK8NDk3!5e0!3m2!1sja!2sjp!4v1710929500!5m2!1sja!2sjp"
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                class="rounded-lg"
+                title="大勝軒しのやの地図">
+            </iframe>
+        </div>
+        <div class="mt-4">
+            <a href="https://maps.google.com/?q=埼玉県北葛飾郡杉戸町北蓮沼497" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="text-orange-600 hover:text-orange-700 font-medium inline-flex items-center">
+                Googleマップで見る
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+            </a>
         </div>
     </div>
 </section>
