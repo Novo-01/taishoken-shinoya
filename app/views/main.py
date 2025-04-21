@@ -10,6 +10,10 @@ def index():
 def menu():
     return render_template('menu.html')
 
+@main_bp.route('/menu_table')
+def menu_table():
+    return render_template('menu_table.html')
+
 @main_bp.route('/info')
 def info():
     return render_template('info.html')
@@ -29,6 +33,10 @@ def sns():
 @main_bp.route('/parking')
 def parking():
     return render_template('parking.html')
+
+@main_bp.route('/commitment')
+def commitment():
+    return render_template('commitment.html')
 
 @main_bp.route('/recruitment')
 def recruitment():
