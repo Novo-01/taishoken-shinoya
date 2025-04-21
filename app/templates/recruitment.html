@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto space-y-8">
+    <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold mb-6">スタッフ募集中</h1>
+        <div class="flex flex-wrap justify-center mb-4">
+            <span class="px-4 py-2 bg-orange-500 text-black rounded-full text-lg font-medium">店長候補</span>
+            <span class="px-4 py-2 bg-orange-500 text-black rounded-full text-lg font-medium">社員</span>
+            <span class="px-4 py-2 bg-orange-500 text-black rounded-full text-lg font-medium">アルバイト</span>
+            <span class="px-4 py-2 bg-orange-500 text-black rounded-full text-lg font-medium">募集中</span>
+        </div>
+        <p class="text-gray-600 text-lg">大勝軒しのやで一緒に働きませんか？</p>
+        <div class="mt-8">
+            <a href="{{ url_for('main.recruitment_form') }}" 
+               class="inline-block px-8 py-4 bg-orange-500 text-white text-xl font-medium rounded-md hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2">
+                応募フォームへ
+            </a>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- 募集要項 -->
+        <div class="card p-6">
+            <h2 class="text-2xl font-bold mb-4">募集要項</h2>
+            <div class="space-y-4">
+                <div>
+                    <h3 class="font-bold text-lg">募集職種</h3>
+                    <p>・店長候補</p>
+                    <p>・社員（正社員）</p>
+                    <p>・アルバイト</p>
+                    <p class="mt-2">※いずれも調理スタッフ、接客スタッフの募集があります</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg">勤務時間</h3>
+                    <p>・7:00～15:00</p>
+                    <p>・17:00～20:00</p>
+                    <p>※シフト制</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg">休日</h3>
+                    <p>・火曜日定休</p>
+                    <p>・年末年始</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg">給与</h3>
+                    <p>【店長候補】</p>
+                    <p>・月給25万円～35万円</p>
+                    <p>【社員】</p>
+                    <p>・月給20万円～30万円</p>
+                    <p>【アルバイト】</p>
+                    <p>・時給1,000円～1,500円</p>
+                    <p class="mt-2">※経験・能力を考慮の上、当店規定により決定</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg">待遇</h3>
+                    <p>・交通費全額支給</p>
+                    <p>・社員割引あり</p>
+                    <p>・制服貸与</p>
+                    <p>・昇給・賞与あり（社員）</p>
+                    <p>・社会保険完備（社員）</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 応募方法 -->
+        <div class="card p-6">
+            <h2 class="text-2xl font-bold mb-4">応募方法</h2>
+            <div class="space-y-4">
+                <div>
+                    <h3 class="font-bold text-lg">応募資格</h3>
+                    <p>【店長候補】</p>
+                    <p>・調理経験3年以上</p>
+                    <p>・マネジメント経験歓迎</p>
+                    <p>【社員・アルバイト】</p>
+                    <p>・18歳以上</p>
+                    <p>・未経験者歓迎</p>
+                    <p>・調理経験者優遇</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg">応募方法</h3>
+                    <p>以下のフォームよりご応募ください。</p>
+                    <div class="mt-4">
+                        <a href="{{ url_for('main.recruitment_form') }}" 
+                           class="inline-block px-6 py-3 bg-orange-500 text-white font-medium rounded-md hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2">
+                            応募フォームへ
+                        </a>
+                    </div>
+                    <p class="mt-4">またはお電話にてお問い合わせください。</p>
+                    <p class="mt-2">TEL: 0480-33-1234</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg">選考フロー</h3>
+                    <p>1. 応募フォーム送信</p>
+                    <p>2. 面接日時の決定</p>
+                    <p>3. 面接</p>
+                    <p>4. 採用通知</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- メッセージ -->
+    <div class="card p-6 mt-8">
+        <h2 class="text-2xl font-bold mb-4">メッセージ</h2>
+        <p class="text-gray-700 leading-relaxed">
+            大勝軒しのやでは、お客様に最高のラーメンを提供するため、情熱を持って働けるスタッフを募集しています。
+            未経験の方でも、やる気があれば大歓迎です。一緒に美味しいラーメンを作り、お客様の笑顔を創りましょう。
+        </p>
+    </div>
+</div>
+{% endblock %} 
